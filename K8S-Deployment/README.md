@@ -2,7 +2,9 @@
 
 ![Linux](https://img.shields.io/badge/Linux-Operating%20System-blue) ![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED) ![Kubernetes](https://img.shields.io/badge/Kubernetes-Container%20Orchestration-326CE5) ![SpringBoot](https://img.shields.io/badge/SpringBoot-Framework-green)
 
-이 문서는 Spring Boot 프로젝트에서 `.jar` 파일을 생성하고, 이를 Docker 이미지로 만들어 Kubernetes에 배포하는 과정을 설명합니다.
+Spring Boot 프로젝트에서 `.jar` 파일을 생성하고, Docker 이미지로 만들어서 Kubernetes(k8s) 환경에서 다중 인스턴스로 배포하는 과정을 정리했습니다.
+
+<br>
 
 ## 1. Spring Boot .jar 파일 생성
 
@@ -72,10 +74,10 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 이제 `SpringApp.jar` 파일을 포함하는 Docker 이미지를 빌드합니다.
 
 ```bash
-docker build -t myusername/spring-app:v1 .
+docker build -t myusername/bootapp:1.0 .
 ```
 
-`myusername` 부분을 Docker Hub 사용자명으로 변경하세요. 빌드된 Docker 이미지는 `spring-app:v1`으로 태그됩니다.
+`myusername` 부분을 Docker Hub 사용자명으로 변경하세요. 빌드된 Docker 이미지는 `bootapp:1.0`으로 태그됩니다.
 
 ### 2.3 Docker Hub에 이미지 푸시
 
@@ -83,8 +85,8 @@ Docker Hub에 이미지를 푸시하여 Kubernetes에서 사용할 수 있도록
 
 ```bash
 docker login
-docker tag bootapp:v1 myusername/bootapp:v1
-docker push myusername/spring-app:v1
+docker tag bootapp:1.0 myusername/bootapp:1.0
+docker push myusername/bootapp:1.0
 ```
 
 이미지를 푸시한 후, Docker Hub에서 이미지를 확인할 수 있습니다.
