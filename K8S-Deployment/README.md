@@ -2,7 +2,9 @@
 
 ![Linux](https://img.shields.io/badge/Linux-Operating%20System-blue) ![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED) ![Kubernetes](https://img.shields.io/badge/Kubernetes-Container%20Orchestration-326CE5) ![SpringBoot](https://img.shields.io/badge/SpringBoot-Framework-green)
 
-Spring Boot 프로젝트에서 `.jar` 파일을 생성하고, Docker 이미지로 만들어서 Kubernetes(k8s) 환경에서 다중 인스턴스로 배포하는 과정을 정리했습니다.
+Spring Boot 애플리케이션을 빌드한 `.jar` 파일을 **Docker** 이미지로 변환하고, **Kubernetes**에 배포하여 다중 인스턴스 환경에서 스케일링과 모니터링을 수행하며 외부 통신을 설정하는 과정을 다룹니다.
+
+![image](https://github.com/user-attachments/assets/66ac0296-4f8e-4e25-80d3-7aeee0f710d0)
 
 <br>
 
